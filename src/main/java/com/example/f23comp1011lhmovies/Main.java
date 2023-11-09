@@ -18,6 +18,12 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+
+        try {
+            APIUtility.callAPI("Back to the future");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        launch();
     }
 }
