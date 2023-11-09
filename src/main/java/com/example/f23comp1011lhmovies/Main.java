@@ -20,7 +20,8 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         try {
-            APIUtility.callAPI("Back to the future");
+            APIResponse response = APIUtility.callAPI("Back to the future");
+            System.out.println(response.getResponse());
         } catch (Exception e) {
             e.printStackTrace();
         }

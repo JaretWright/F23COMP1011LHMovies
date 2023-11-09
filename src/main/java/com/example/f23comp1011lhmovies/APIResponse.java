@@ -1,5 +1,7 @@
 package com.example.f23comp1011lhmovies;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Class names are always PascalCase, everything else is camelCase
  *
@@ -9,7 +11,21 @@ package com.example.f23comp1011lhmovies;
 public class APIResponse {
     private String totalResults;
 
-    @SerializedName("Response")
+    @SerializedName("Response")  //The annotation "@SerializedName" allows us to reference what the field is called in the json file
     private String response;
 
+    @SerializedName("Search")
+    private MovieInfo[] search;
+
+    public String getTotalResults() {
+        return totalResults;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public MovieInfo[] getSearch() {
+        return search;
+    }
 }
