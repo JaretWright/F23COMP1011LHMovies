@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.f23comp1011lhmovies/com.example.f23comp1011lhmovies.HelloApplication
+                                com.example.f23comp1011lhmovies/com.example.f23comp1011lhmovies.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
