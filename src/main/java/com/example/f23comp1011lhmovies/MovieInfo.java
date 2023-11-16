@@ -38,6 +38,7 @@ public class MovieInfo {
         return poster;
     }
 
+    @Override
     public String toString()
     {
         return String.format("%s-%s",year,title);
