@@ -2,6 +2,8 @@ package com.example.f23comp1011lhmovies;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 /**
  * Class names are always PascalCase, everything else is camelCase
  *
@@ -15,7 +17,7 @@ public class APIResponse {
     private String response;
 
     @SerializedName("Search")
-    private MovieInfo[] search;
+    private ArrayList<MovieInfo> search;
 
     public String getTotalResults() {
         return totalResults;
@@ -25,7 +27,7 @@ public class APIResponse {
         return response;
     }
 
-    public MovieInfo[] getSearch() {
+    public ArrayList<MovieInfo> getMovies() {
         return search;
     }
 }

@@ -37,4 +37,9 @@ public class MovieInfo {
     public String getPoster() {
         return poster;
     }
+
+    public String toString()
+    {
+        return String.format("%s-%s",year,title);
+    }
 }

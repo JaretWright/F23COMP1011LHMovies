@@ -9,13 +9,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
+
 public class SearchMovieController {
 
     @FXML
     private Label infoLabel;
 
     @FXML
-    private ListView<?> listView;
+    private ListView<MovieInfo> listView;
 
     @FXML
     private Label msgLabel;
@@ -45,5 +47,26 @@ public class SearchMovieController {
         selectedVBox.setVisible(false);
         msgLabel.setVisible(false);
         resultsVBox.setVisible(false);
+    }
+
+    @FXML
+    private void search()
+    {
+        listView.getItems().clear();
+        try {
+            APIResponse apiResponse = APIUtility.callAPI(searchTextField.getText().trim());
+            if (apiResponse.getMovies().size()>0)
+            {
+                resultsVBox.setVisible(true);
+                listView.getItems().addAll(apiResponse.getMovies());
+                infoLabel.setText("Showing "+listView.getItems().size() + " of " +
+                        apiResponse.getTotalResults());
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
