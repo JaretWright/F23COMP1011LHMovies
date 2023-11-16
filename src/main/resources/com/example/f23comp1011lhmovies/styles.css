@@ -1,0 +1,37 @@
+.root{
+    -fx-font: bold italic 20pt "Arial";
+    -fx-background-image: url("images/background.png");
+    -fx-background-size: cover;
+}
+
+.label{
+    -fx-text-fill: #e0820f;
+    -fx-font: bold 20pt "Forte";
+}
+
+#msgLabel{
+    -fx-text-fill: #e0820f;
+    -fx-font: bold 20pt "Forte";
+    -fx-background-color: #140d09;
+    -fx-background-radius: 20px;
+    -fx-padding: 10px;
+}
+
+.button {
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+    -fx-background-radius: 20px;
+}
+
+.list-view {
+    -fx-background-radius: 20px;
+}
+
+.text-field{
+    -fx-background-radius: 20px;
+}
+
+#titlesListView{
+    -fx-padding: 10px;
+    -fx-background-color: #140d09;
+    -fx-background-radius: 20px;
+}

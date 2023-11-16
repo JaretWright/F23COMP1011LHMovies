@@ -1,37 +1,49 @@
 package com.example.f23comp1011lhmovies;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
-
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.Locale;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class SearchMovieController {
 
     @FXML
-    private TextField movieTextField;
+    private Label infoLabel;
+
+    @FXML
+    private ListView<?> listView;
+
+    @FXML
+    private Label msgLabel;
+
+    @FXML
+    private ImageView posterImageView;
+
+    @FXML
+    private ProgressBar progressBar;
+
+    @FXML
+    private HBox resultsBox;
+
+    @FXML
+    private TextField searchTextField;
+
+    @FXML
+    private VBox selectedVBox;
+
+    @FXML
+    private VBox resultsVBox;
 
     @FXML
     private void initialize()
     {
-        movieTextField.textProperty().addListener((observableValue, oldValue, newValue) -> {
-            System.out.printf("Old Value: %s  new Value: %s%n",oldValue,newValue);
-        });
-    }
-
-    private int getAge(LocalDate birthday)
-    {
-        return Period.between(birthday, LocalDate.now()).getYears();
-    }
-
-    public class MovieChangeListener implements ChangeListener<String>{
-
-        @Override
-        public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
-            System.out.printf("Old Value: %s  new Value: %s%n",oldValue,newValue);
-        }
+        progressBar.setVisible(false);
+        selectedVBox.setVisible(false);
+        msgLabel.setVisible(false);
+        resultsVBox.setVisible(false);
     }
 }

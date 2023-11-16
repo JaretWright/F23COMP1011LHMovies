@@ -23,6 +23,9 @@ public class StreamExamples {
                                     .mapToDouble(employee -> employee.getSalary())
                                     .average();
 
+        employees.stream().filter(employee -> employee.getDepartment().equals("sales"))
+                .count();
+
         if (avgSalarySales.isPresent())
         {
             CurrencyStringConverter csc = new CurrencyStringConverter(Locale.CANADA);
