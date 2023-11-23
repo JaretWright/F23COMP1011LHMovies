@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -47,6 +48,29 @@ public class SearchMovieController {
         selectedVBox.setVisible(false);
         msgLabel.setVisible(false);
         resultsVBox.setVisible(false);
+
+        //configure the listview to know when a movie is selected and show the
+        //poster art
+        listView.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, oldValue, movieSelected)->{
+                    if (movieSelected!= null)
+                    {
+                        selectedVBox.setVisible(true);
+                        try {
+                            posterImageView.setImage(new Image(movieSelected.getPoster()));
+                        }catch (IllegalArgumentException e)
+                        {
+                            posterImageView.setImage(new Image(
+                                    Main.class.getResourceAsStream("images/default_poster.png")));
+                        }
+                    }
+                    else
+                    {
+                        selectedVBox.setVisible(false);
+                    }
+
+                });
     }
 
     @FXML
@@ -62,7 +86,6 @@ public class SearchMovieController {
                 infoLabel.setText("Showing "+listView.getItems().size() + " of " +
                         apiResponse.getTotalResults());
             }
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (InterruptedException e) {
