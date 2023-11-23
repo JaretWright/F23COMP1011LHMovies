@@ -88,10 +88,9 @@ public class SearchMovieController {
             {
                 resultsVBox.setVisible(true);
                 listView.getItems().addAll(apiResponse.getMovies());
-                infoLabel.setText("Showing "+listView.getItems().size() + " of " +
-                        apiResponse.getTotalResults());
-
                 totalNumOfMovies = Integer.parseInt(apiResponse.getTotalResults());
+                updateLabels();
+
                 if (listView.getItems().size()<totalNumOfMovies)
                     fetchAllButton.setVisible(true);
                 else
@@ -111,8 +110,15 @@ public class SearchMovieController {
     }
 
     @FXML
-    void fetchAll(ActionEvent event) {
-
+    void fetchAll(ActionEvent event) throws IOException, InterruptedException {
+        String movieName = searchTextField.getText();
+        APIResponse apiResponse = APIUtility.callAPI(movieName,++page);
+        listView.getItems().addAll(apiResponse.getMovies());
+        updateLabels();
     }
 
+    private void updateLabels()
+    {
+        infoLabel.setText("Showing "+listView.getItems().size() + " of " + totalNumOfMovies);
+    }
 }
