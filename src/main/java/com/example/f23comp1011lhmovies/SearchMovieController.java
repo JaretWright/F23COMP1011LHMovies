@@ -1,5 +1,6 @@
 package com.example.f23comp1011lhmovies;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -91,5 +92,11 @@ public class SearchMovieController {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    void getDetails(ActionEvent event) throws IOException {
+        MovieInfo movieSelected = listView.getSelectionModel().getSelectedItem();
+        SceneChanger.changeScenes(event,"info-view.fxml", movieSelected.getImdgbID());
     }
 }

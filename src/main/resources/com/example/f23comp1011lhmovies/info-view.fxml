@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="900.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f23comp1011lhmovies.InfoViewController">
+<AnchorPane prefHeight="1000.0" prefWidth="900.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f23comp1011lhmovies.InfoViewController">
     <children>
         <HBox alignment="CENTER" layoutX="252.0" layoutY="463.0" prefHeight="1000.0" prefWidth="800.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
             <children>
                 <VBox alignment="CENTER">
                     <children>
                         <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button mnemonicParsing="false"  text="Back" />
+                        <Button mnemonicParsing="false" onAction="#backToSearch" text="Back" />
                     </children>
                 </VBox>
                 <GridPane id="msgLabel" prefWidth="550.0">

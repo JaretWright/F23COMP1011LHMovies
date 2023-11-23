@@ -40,7 +40,7 @@
                   <VBox fx:id="selectedVBox" alignment="CENTER">
                      <children>
                         <ImageView fx:id="posterImageView" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button mnemonicParsing="false" text="Details &gt;&gt;" />
+                        <Button mnemonicParsing="false" onAction="#getDetails" text="Details &gt;&gt;" />
                      </children>
                   </VBox>
                </children>
