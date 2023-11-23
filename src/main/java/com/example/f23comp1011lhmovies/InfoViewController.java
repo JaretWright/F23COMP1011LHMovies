@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InfoViewController {
+public class InfoViewController implements LoadMovie{
 
     @FXML
     private Label genreLabel;

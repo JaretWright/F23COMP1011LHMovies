@@ -29,7 +29,7 @@ public class SceneChanger {
         Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
 
         //get an instance of the InfoViewController class and call the loadMovie() method
-        InfoViewController controller = fxmlLoader.getController();
+        LoadMovie controller = fxmlLoader.getController();
         controller.loadMovieInfo(imdbID);
 
         stage.setScene(scene);

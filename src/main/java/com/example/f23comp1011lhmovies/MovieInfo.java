@@ -26,7 +26,7 @@ public class MovieInfo {
         return year;
     }
 
-    public String getImdgbID() {
+    public String getImdbID() {
         return imdbID;
     }
 
