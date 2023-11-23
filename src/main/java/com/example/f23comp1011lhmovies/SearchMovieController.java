@@ -2,10 +2,7 @@ package com.example.f23comp1011lhmovies;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -41,6 +38,9 @@ public class SearchMovieController {
 
     @FXML
     private VBox resultsVBox;
+
+    @FXML
+    private Button fetchAllButton;
 
     @FXML
     private void initialize()
@@ -86,6 +86,12 @@ public class SearchMovieController {
                 listView.getItems().addAll(apiResponse.getMovies());
                 infoLabel.setText("Showing "+listView.getItems().size() + " of " +
                         apiResponse.getTotalResults());
+
+                int totalNumOfMovies = Integer.parseInt(apiResponse.getTotalResults());
+                if (listView.getItems().size()<totalNumOfMovies)
+                    fetchAllButton.setVisible(true);
+                else
+                    fetchAllButton.setVisible(false);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -99,4 +105,10 @@ public class SearchMovieController {
         MovieInfo movieSelected = listView.getSelectionModel().getSelectedItem();
         SceneChanger.changeScenes(event,"info-view.fxml", movieSelected.getImdbID());
     }
+
+    @FXML
+    void fetchAll(ActionEvent event) {
+
+    }
+
 }

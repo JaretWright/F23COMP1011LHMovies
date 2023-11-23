@@ -6,12 +6,12 @@
 
 .label{
     -fx-text-fill: #e0820f;
-    -fx-font: bold 20pt "Forte";
+    -fx-font: bold 20pt "Arial";
 }
 
 #msgLabel{
     -fx-text-fill: #e0820f;
-    -fx-font: bold 20pt "Forte";
+    -fx-font: bold 20pt "Arial";
     -fx-background-color: #140d09;
     -fx-background-radius: 20px;
     -fx-padding: 10px;
@@ -24,14 +24,35 @@
 
 .list-view {
     -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-padding: 10px;
+    -fx-background-color: #e9e9e9;
 }
 
 .text-field{
     -fx-background-radius: 20px;
+    -fx-padding: 8px;
+    -fx-background-color: #f7f7f7;
 }
 
 #titlesListView{
     -fx-padding: 10px;
     -fx-background-color: #140d09;
     -fx-background-radius: 20px;
+}
+
+.progress-bar {
+    -fx-background-radius: 20px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 20px;
+}
+
+.progress-bar .track{
+    -fx-background-color: #f7f7f7;
+    -fx-background-radius: 20px;
+}
+
+.progress-bar .bar{
+    -fx-background-color: linear-gradient(to left, #e0820f, #f7f7f7);
+    -fx-background-radius: 18px;
 }

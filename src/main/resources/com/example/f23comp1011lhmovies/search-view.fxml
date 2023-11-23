@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -27,14 +28,21 @@
             </HBox>
             <HBox fx:id="resultsBox" alignment="CENTER" spacing="20.0">
                <children>
-                  <VBox id="titlesListView" fx:id="resultsVBox">
+                  <VBox id="titlesListView" fx:id="resultsVBox" spacing="5.0">
                      <children>
                         <ListView fx:id="listView" prefHeight="420.0" prefWidth="450.0">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </ListView>
-                        <Label fx:id="infoLabel" text="Label" />
+                        <BorderPane>
+                           <left>
+                              <Label fx:id="infoLabel" text="Label" BorderPane.alignment="CENTER" />
+                           </left>
+                           <right>
+                              <Button fx:id="fetchAllButton" mnemonicParsing="false" onAction="#fetchAll" text="Fetch All" BorderPane.alignment="CENTER" />
+                           </right>
+                        </BorderPane>
                      </children>
                   </VBox>
                   <VBox fx:id="selectedVBox" alignment="CENTER">
