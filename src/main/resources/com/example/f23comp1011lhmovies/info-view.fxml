@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="900.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f23comp1011lhmovies.InfoViewController">
+    <children>
+        <HBox alignment="CENTER" layoutX="252.0" layoutY="463.0" prefHeight="1000.0" prefWidth="800.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
+            <children>
+                <VBox alignment="CENTER">
+                    <children>
+                        <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button mnemonicParsing="false"  text="Back" />
+                    </children>
+                </VBox>
+                <GridPane id="msgLabel" prefWidth="550.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="134.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.0" minWidth="10.0" prefWidth="346.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="200.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Title" />
+                        <Label text="Genre" GridPane.rowIndex="1" />
+                        <Label text="Rated" GridPane.rowIndex="2" />
+                        <Label text="Year" GridPane.rowIndex="3" />
+                        <Label text="Plot" GridPane.rowIndex="4" />
+                        <Label text="Language" GridPane.rowIndex="5" />
+                        <Label text="Ratings" GridPane.rowIndex="6" />
+                        <Label fx:id="titleLabel" text="Label" wrapText="true" GridPane.columnIndex="1" />
+                        <Label fx:id="genreLabel" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="ratedLabel" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="yearLabel" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="plotLabel" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="languageLabel" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <ListView fx:id="ratingsListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    </children>
+                </GridPane>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>
