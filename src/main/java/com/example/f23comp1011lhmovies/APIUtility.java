@@ -14,11 +14,11 @@ import java.nio.file.Paths;
 
 public class APIUtility {
 
-    public static APIResponse callAPI(String movieName) throws IOException, InterruptedException {
+    public static APIResponse callAPI(String movieName, int page) throws IOException, InterruptedException {
         movieName = movieName.replaceAll(" ","%20");
 
         //this is the search String that we used in the browser
-        String uri = "http://www.omdbapi.com/?apikey=4a1010ab&s="+movieName;
+        String uri = "http://www.omdbapi.com/?apikey=4a1010ab&s="+movieName+"&page="+page;
 
         //configure the environment to make a HTTP request (this includes an update to
         //the module-info.java file

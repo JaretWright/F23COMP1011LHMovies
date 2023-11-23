@@ -42,6 +42,8 @@ public class SearchMovieController {
     @FXML
     private Button fetchAllButton;
 
+    private int page, totalNumOfMovies;
+
     @FXML
     private void initialize()
     {
@@ -77,9 +79,11 @@ public class SearchMovieController {
     @FXML
     private void search()
     {
+        page = 1;
         listView.getItems().clear();
         try {
-            APIResponse apiResponse = APIUtility.callAPI(searchTextField.getText().trim());
+            String movieName = searchTextField.getText().trim();
+            APIResponse apiResponse = APIUtility.callAPI(movieName, page);
             if (apiResponse.getMovies().size()>0)
             {
                 resultsVBox.setVisible(true);
@@ -87,7 +91,7 @@ public class SearchMovieController {
                 infoLabel.setText("Showing "+listView.getItems().size() + " of " +
                         apiResponse.getTotalResults());
 
-                int totalNumOfMovies = Integer.parseInt(apiResponse.getTotalResults());
+                totalNumOfMovies = Integer.parseInt(apiResponse.getTotalResults());
                 if (listView.getItems().size()<totalNumOfMovies)
                     fetchAllButton.setVisible(true);
                 else
