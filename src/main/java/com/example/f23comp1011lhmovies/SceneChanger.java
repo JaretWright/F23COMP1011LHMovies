@@ -30,7 +30,7 @@ public class SceneChanger {
 
         //get an instance of the InfoViewController class and call the loadMovie() method
         LoadMovie controller = fxmlLoader.getController();
-        controller.loadMovieInfo(imdbID);
+        controller.loadData(imdbID);
 
         stage.setScene(scene);
         stage.show();

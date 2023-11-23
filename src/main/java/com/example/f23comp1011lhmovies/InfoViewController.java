@@ -42,7 +42,7 @@ public class InfoViewController implements LoadMovie{
         SceneChanger.changeScenes(event, "search-view.fxml");
     }
 
-    public void loadMovieInfo(String imdbID)
+    public void loadData(String imdbID)
     {
         System.out.println(imdbID);
     }
