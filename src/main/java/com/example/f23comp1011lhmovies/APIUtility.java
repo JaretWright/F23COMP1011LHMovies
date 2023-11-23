@@ -1,7 +1,9 @@
 package com.example.f23comp1011lhmovies;
 
 import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -33,5 +35,24 @@ public class APIUtility {
                                                 .BodyHandlers.ofString());
         Gson gson = new Gson();
         return gson.fromJson(response.body(), APIResponse.class);
+    }
+
+    public static APIResponse getAPIResponseFromJSONFile(String fileName)
+    {
+        Gson gson = new Gson();
+        APIResponse apiResponse = null;
+
+        try(
+                FileReader fileReader = new FileReader(fileName);
+                JsonReader jsonReader = new JsonReader(fileReader);
+                )
+        {
+            apiResponse = gson.fromJson(jsonReader, APIResponse.class);
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return apiResponse;
     }
 }

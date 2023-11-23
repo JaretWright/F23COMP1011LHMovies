@@ -1,0 +1,76 @@
+{
+  "Search": [
+    {
+      "Title": "Back to the Future",
+      "Year": "1985",
+      "imdbID": "tt0088763",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Back to the Future Part II",
+      "Year": "1989",
+      "imdbID": "tt0096874",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZTMxMGM5MjItNDJhNy00MWI2LWJlZWMtOWFhMjI5ZTQwMWM3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Back to the Future Part III",
+      "Year": "1990",
+      "imdbID": "tt0099088",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYjhlMGYxNmMtOWFmMi00Y2M2LWE5NWYtZTdlMDRlMGEzMDA3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Back to the Future... The Ride",
+      "Year": "1991",
+      "imdbID": "tt0101392",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjM2OTc3NWQtODc0Mi00NDQxLTkwZDItY2U4ZTJjMDFiMzlmXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Back to the Future",
+      "Year": "1991–1993",
+      "imdbID": "tt0101042",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMzZlZjY0ZmItMGMwMy00MmQwLTkzNzUtZTk4YjA1ZGI3NGE2XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Back to the Future: The Game - 30th Anniversary Edition",
+      "Year": "2015",
+      "imdbID": "tt4961498",
+      "Type": "game",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZmQwYzlmYjktODAzZC00NzFkLTkyM2EtOTdmZWQ5YzdhYjA2XkEyXkFqcGdeQXVyMTgwMzM1NjA@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Expedition: Back to the Future",
+      "Year": "2021",
+      "imdbID": "tt14251550",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNWY5YmYyM2EtMDM4YS00YjRhLWEwYTktZGNkOWY5MDZmMTFiXkEyXkFqcGdeQXVyMTU0ODcyOA@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Back to the Future: The Game - Episode 1, It's About Time",
+      "Year": "2010",
+      "imdbID": "tt1688659",
+      "Type": "game",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZGRmMzM2N2MtMTQ0MS00OGZmLTg5YTYtZDVmNzkyYzg4NTRhXkEyXkFqcGdeQXVyODMwNzg0Njc@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Back to the Future: Making the Trilogy",
+      "Year": "2002",
+      "imdbID": "tt0338228",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTdlMzRhMTctYmM4NS00NzNhLWFjNWYtMWRkZDYzNjVjMDFkXkEyXkFqcGdeQXVyNTIyODk4NTg@._V1_SX300.jpg"
+    },
+    {
+      "Title": "The Secrets of the Back to the Future Trilogy",
+      "Year": "1990",
+      "imdbID": "tt0162636",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTc5MTE3NTE3N15BMl5BanBnXkFtZTcwMzM4NTIyMQ@@._V1_SX300.jpg"
+    }
+  ],
+  "totalResults": "65",
+  "Response": "True"
+}
