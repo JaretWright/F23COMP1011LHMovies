@@ -37,6 +37,13 @@ public class APIUtility {
         return gson.fromJson(response.body(), APIResponse.class);
     }
 
+    /**
+     * This method will read a JSON file and create an APIResponse object
+     * @param fileName - If the file is located in the root of the project, just the
+     *                 filename needs to be provided.  If it is in a subdirectory, then be
+     *                 sure to include the path to the file.
+     * @return
+     */
     public static APIResponse getAPIResponseFromJSONFile(String fileName)
     {
         Gson gson = new Gson();

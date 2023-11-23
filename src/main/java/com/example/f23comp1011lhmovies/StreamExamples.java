@@ -10,6 +10,10 @@ import java.util.stream.Collectors;
  */
 public class StreamExamples {
     public static void main(String[] args) {
+        APIResponse apiResponse = APIUtility.getAPIResponseFromJSONFile("movies.json");
+
+
+
         ArrayList<Employee> employees = DBUtility.getEmployees();
 
         //provide a list of employees that work in the HR department
