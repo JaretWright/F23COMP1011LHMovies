@@ -37,6 +37,30 @@ public class APIUtility {
         return gson.fromJson(response.body(), APIResponse.class);
     }
 
+    public static MovieDetails getMovieDetails(String imdbID) throws IOException, InterruptedException {
+        imdbID = imdbID.trim().replaceAll(" ","%20");  //probably will never change the argument
+
+        //this is the search String that we used in the browser
+        String uri = "http://www.omdbapi.com/?apikey=4a1010ab&i="+imdbID;
+
+        //configure the environment to make a HTTP request (this includes an update to
+        //the module-info.java file
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(uri)).build();
+
+        //this will save to a file called movies.json
+//        HttpResponse<Path> httpResponse = client.send(httpRequest, HttpResponse
+//                                                    .BodyHandlers
+//                                                    .ofFile(Paths.get("movies.json")));
+
+        //this will save the json to a HttpResponse object
+        HttpResponse<String> response = client.send(httpRequest, HttpResponse
+                .BodyHandlers.ofString());
+        Gson gson = new Gson();
+        System.out.println(response.body());
+        return gson.fromJson(response.body(), MovieDetails.class);
+    }
+
     /**
      * This method will read a JSON file and create an APIResponse object
      * @param fileName - If the file is located in the root of the project, just the
