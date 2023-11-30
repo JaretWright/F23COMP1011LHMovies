@@ -1,5 +1,6 @@
 package com.example.f23comp1011lhmovies;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -110,11 +111,47 @@ public class SearchMovieController {
     }
 
     @FXML
-    void fetchAll(ActionEvent event) throws IOException, InterruptedException {
-        String movieName = searchTextField.getText();
-        APIResponse apiResponse = APIUtility.callAPI(movieName,++page);
-        listView.getItems().addAll(apiResponse.getMovies());
-        updateLabels();
+    void fetchAll() {
+        page++;
+        String movieName = this.searchTextField.getText().trim();
+        progressBar.setVisible(true);
+
+        //create another thread to fetch all the movies and update the application visually
+        Thread fetchThread = new Thread(()->{
+
+            APIResponse apiResponse = null;
+            try {
+                apiResponse = APIUtility.callAPI(movieName,page);
+                listView.getItems().addAll(apiResponse.getMovies());
+            } catch (IOException | InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+            if (listView.getItems().size()<totalNumOfMovies)
+            {
+                fetchAll();
+            }
+            else
+            {
+                fetchAllButton.setVisible(false);
+            }
+
+            //to access the JavaFX thread, use Platform.runLater()
+            Platform.runLater(()->{
+                updateLabels();
+                double progressAmount = (double) listView.getItems().size()/totalNumOfMovies;
+                if (progressAmount <1)
+                {
+                    progressBar.setProgress(progressAmount);
+                }
+                else
+                {
+                    progressBar.setVisible(false);
+                }
+            });
+
+        });
+        fetchThread.start();
     }
 
     private void updateLabels()
